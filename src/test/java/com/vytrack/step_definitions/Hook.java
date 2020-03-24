@@ -6,7 +6,7 @@ import io.cucumber.java.Before;
 public class Hook {
       @Before
     public void setup(){
-        System.out.println("Test setuo!");
+        System.out.println("Test setup!");
     }
     @After
     public void teardown(){

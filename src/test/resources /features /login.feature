@@ -45,3 +45,4 @@ Feature: Login
       Then user logs in as driver with following credentials
       |usernsme|user160    |
       |password|UserUser123|
+     And user verifies that "Quick launchpad" page subtitle is displayed

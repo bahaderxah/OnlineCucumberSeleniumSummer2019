@@ -2,7 +2,7 @@ package com.vytrack.step_definitions;
 
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
-import  com.vytrack.utilities.ConfigurationReader;
+import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.apache.log4j.Logger;
@@ -37,7 +37,7 @@ public class LoginStepDefinitions {
     public void user_verifies_that_page_subtitle_is_displayed(String string) {
         loginPage.waitUntilLoaderMaskDisappear();
         BrowserUtils.wait(2);
-
+        Assert.assertEquals(string, loginPage.getPageSubTitle());
         logger.info("Verifying page subtitle: " + string);
     }
 
@@ -68,19 +68,7 @@ public class LoginStepDefinitions {
 
     @Then("user logs in as driver with following credentials")
     public void user_logs_in_as_driver_with_following_credentials(Map<String, String> dataTable) {
-        logger.info(dataTable);
-        loginPage.login(dataTable.get("username"), dataTable.get("password"));
+        System.out.println(dataTable);
+        loginPage.login(dataTable.get("username"),dataTable.get("password"));
     }
-
-    @Then("user logs in as {string}")
-    public void user_logs_in_as(String role) {
-        loginPage.login(role);
-    }
-
-    @Then("the page title should be {string}")
-    public void the_page_title_should_be(String string) {
-        BrowserUtils.waitForPageTitle(string);
-        Assert.assertEquals("Title is incorrect", string, Driver.get().getTitle());
-    }
-
 }

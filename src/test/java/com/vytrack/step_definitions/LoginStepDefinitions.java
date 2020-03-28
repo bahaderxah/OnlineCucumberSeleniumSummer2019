@@ -69,6 +69,11 @@ public class LoginStepDefinitions {
     @Then("user logs in as driver with following credentials")
     public void user_logs_in_as_driver_with_following_credentials(Map<String, String> dataTable) {
         System.out.println(dataTable);
-        loginPage.login(dataTable.get("username"),dataTable.get("password"));
+        loginPage.login(dataTable.get("username"), dataTable.get("password"));
+    }
+
+    @Then("user logs in as {string}")
+    public void user_logs_in_as(String role) {
+        loginPage.login(role);
     }
 }

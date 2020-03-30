@@ -101,6 +101,8 @@ Feature: Login
       | driver | Activities | Calendar Events | Calendar Events - Activities                                 |
       | driver | System     | Jobs            | Jobs - System                                                |
 
+
+
     Examples: sales managers
       | role          | module     | sub module      | title                                                              |
       | sales manager | Fleet      | Vehicles        | All - Car - Entities - System - Car - Entities - System            |

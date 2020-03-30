@@ -76,4 +76,17 @@ public class LoginStepDefinitions {
     public void user_logs_in_as(String role) {
         loginPage.login(role);
     }
+
+    @Then("the page title should be {string}")
+    public void the_page_title_should_be(String  string){
+        BrowserUtils.waitForPageTitle(string);
+        Assert.assertEquals("Title is incorrect", string,Driver.get().getTitle());
+    }
+
+    @When("user navigates to {string} then to {string}")
+    public void userNavigatesToThenTo(String role, String title) {
+        BrowserUtils.wait(3);
+       loginPage.login(role, title);
+
+    }
 }

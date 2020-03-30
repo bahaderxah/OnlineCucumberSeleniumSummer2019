@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources /features ",
+        features ="src/test/resources/features",
         glue="com/vytrack/step_definitions",
         dryRun = false,
-        tags = "  @login_with_role ",
+        tags ="  @login_with_roles_ddt_2",
         plugin = {"html:target/default-cucumber-reports",
                        "json:target/cucumber.json"
         }
